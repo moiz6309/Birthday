@@ -1,0 +1,301 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7e9;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.birthday-container {
+    text-align: center;
+    background-color:#f5e6ff;
+    border-radius: 10px ;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    z-index: 2;
+    animation: slideIn 1.5s ease-in-out;
+    bottom:10px;
+}
+
+/* Greeting Section */
+.greeting h1 {
+    font-size: 3em;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.greeting h2 {
+    font-size: 2.5em;
+    color: #ff8c42;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+.greeting p {
+    font-size: 1.4em;
+    color: #444;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Additional Text */
+.more-text h3 {
+    font-size:medium;
+    color: #4db8ff;
+    animation: bounceIn 2s ease-in-out;
+    margin-top: 20px;
+}
+
+.more-text p {
+    font-size: 1.2em;
+    color: #333;
+    animation: zoomIn 2s ease-in-out;
+}
+
+/* Image Block */
+.image-block img {
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 2px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 2s ease-in-out;
+}
+
+/* Floating Papers */
+.paper {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+/* Different Colors for Papers */
+.paper:nth-child(1) { background-color: #ff6b6b; }
+.paper:nth-child(2) { background-color: #ff8c42; }
+.paper:nth-child(3) { background-color: #4db8ff; }
+.paper:nth-child(4) { background-color: #32cd32; }
+.paper:nth-child(5) { background-color: #ffa07a; }
+.paper:nth-child(6) { background-color: #9370db; }
+.paper:nth-child(7) { background-color: #6a5acd; }
+.paper:nth-child(8) { background-color: #ff6347; }
+.paper:nth-child(9) { background-color: #20b2aa; }
+.paper:nth-child(10) { background-color: #ff8c00; }
+.paper:nth-child(11) { background-color: #4682b4; }
+.paper:nth-child(12) { background-color: #dc143c; }
+/* Paper Animation (First Way) */
+@keyframes floatPaper {
+0% {
+transform: translate(0, 0);
+left: 0;
+top: 0;
+}
+25% {
+transform: translate(100vw, 0);
+left: 0;
+top: 0;
+}
+50% {
+transform: translate(100vw, 100vh);
+left: 0;
+top: 0;
+}
+75% {
+transform: translate(0, 100vh);
+left: 100vw;
+top: 0;
+}
+100% {
+transform: translate(0, 0);
+left: 0;
+top: 0;
+}
+}
+
+/* Paper Animation (Second Way) */
+@keyframes floatPaperReverse {
+0% {
+transform: translate(0, 0);
+left: 100vw;
+top: 0;
+}
+25% {
+transform: translate(-100vw, 0);
+left: 100vw;
+top: 0;
+}
+50% {
+transform: translate(-100vw, 100vh);
+left: 100vw;
+top: 0;
+}
+75% {
+transform: translate(0, 100vh);
+left: 0;
+top: 0;
+}
+100% {
+transform: translate(0, 0);
+left: 100vw;
+top: 0;
+}
+}
+
+/* Background Balloons */
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 40px;
+    height: 60px;
+    border-radius: 50%;
+    animation: floatUp 8s infinite ease-in-out;
+}
+
+.balloon-red {
+    background-color: rgba(255, 0, 0, 0.6);
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.balloon-orange {
+    background-color: rgba(255, 165, 0, 0.6);
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.balloon-yellow {
+    background-color: rgba(255, 255, 0, 0.6);
+    left: 30%;
+    animation-delay: 3s;
+}
+
+.balloon-green {
+    background-color: rgba(0, 128, 0, 0.6);
+    left: 40%;
+    animation-delay: 1s;
+}
+
+.balloon-blue {
+    background-color: rgba(0, 0, 255, 0.6);
+    left: 50%;
+    animation-delay: 5s;
+}
+
+.balloon-purple {
+    background-color: rgba(128, 0, 128, 0.6);
+    left: 60%;
+    animation-delay: 2.5s;
+}
+
+.balloon-pink {
+    background-color: rgba(255, 192, 203, 0.6);
+    left: 70%;
+    animation-delay: 1.5s;
+}
+
+.balloon-brown {
+    background-color: rgba(165, 42, 42, 0.6);
+    left: 80%;
+    animation-delay: 3.5s;
+}
+
+.balloon-gray {
+    background-color: rgba(128, 128, 128, 0.6);
+    left: 90%;
+    animation-delay: 4.5s;
+}
+
+.balloon-black {
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 5%;
+    animation-delay: 2.2s;
+}
+
+.balloon-white {
+    background-color: rgba(255, 255, 255, 0.6);
+    left: 15%;
+    animation-delay: 4.2s;
+}
+
+/* Balloon Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounceIn {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+/* Add the following code to the CSS styles */
+.happy-text {
+position: absolute;
+top: 50%;
+left: 100px;
+transform: translateY(-50%);
+font-size:x-large;
+color:#ff6b6b;
+font-weight:bolder;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+animation: pulse 1s infinite
+}
+
+.birthday-text {
+position: absolute;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+top: 50%;
+right: 100px;
+transform: translateY(-50%);
+font-size:x-large;
+color: #ff6b6b;
+font-weight: bolder;
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+animation: pulse 1s infinite
+}
+
+@keyframes highlight {
+0% {
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+50% {
+text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+100% {
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+}

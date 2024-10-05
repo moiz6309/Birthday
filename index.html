@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="birthdayApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+        <link rel="stylesheet"  href="b.css">
+</head>
+<body ng-controller="birthdayController">
+    <div class="birthday-container">
+        <div class="greeting">
+            <h1>{{ greetingMessage }}</h1>
+            <marquee style="color: #dc143c;font-weight: 500;">Happy Birthday Beautiful!</marquee>
+            <h2>Happy Birthday, {{ name }}</h2>
+            <p>{{ birthdayWish }}</p>
+        </div>
+        <div class="more-text">
+            <h3>{{ specialMessageTitle }}</h3>
+            <p>{{ specialMessage }}</p>
+            <p>{{ specialMessage1 }}</p>
+            
+        </div>
+        <div class="image-block">
+            <img src="shazleen.jpg" alt="Your Image">
+            </div>
+    </div>
+    <!-- Add the following code inside the body tag -->
+<!-- Add the following code inside the body tag, but inside the container div -->
+
+    <div class="happy-text">Happy</div>
+    <div class="birthday-text">Birthday</div>
+    <!-- Rest of your code here... -->
+
+    <!-- Floating Papers -->
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+
+    <!-- Balloons -->
+    <div class="balloon balloon-red"></div>
+    <div class="balloon balloon-orange"></div>
+    <div class="balloon balloon-yellow"></div>
+    <div class="balloon balloon-green"></div>
+    <div class="balloon balloon-blue"></div>
+    <div class="balloon balloon-purple"></div>
+    <div class="balloon balloon-pink"></div>
+    <div class="balloon balloon-brown"></div>
+    <div class="balloon balloon-gray"></div>
+    <div class="balloon balloon-black"></div>
+    <div class="balloon balloon-white"></div>
+    <div class="balloon balloon-red"></div>
+    <div class="balloon balloon-orange"></div>
+    <div class="balloon balloon-yellow"></div>
+    <div class="balloon balloon-green"></div>
+    <div class="balloon balloon-blue"></div>
+    <div class="balloon balloon-purple"></div>
+    <div class="balloon balloon-pink"></div>
+    <div class="balloon balloon-brown"></div>
+    <div class="balloon balloon-gray"></div>
+    <div class="balloon balloon-black"></div>
+    <div class="balloon balloon-white"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        angular.module('birthdayApp', []).controller('birthdayController', function($scope) {
+       
+            $scope.name = "Shazleen Naaz";
+            $scope.birthdayWish = "Wishing you a day filled with love and joy!";
+            $scope.specialMessageTitle = "Inshallah ap aage jaake khuub tarakki karo!";
+            $scope.specialMessage = "May allah Grant you Success.";
+            $scope.specialMessage1 = "Agar zindagi ek kitaab hai, toh tum meri sabse khoobsurat kahani ho. ";
+
+        });
+
+        // Create papers for reverse movement
+        const papers = document.querySelectorAll('.paper');
+        papers.forEach((paper, index) => {
+            // Set the animation for the original papers
+            if (index % 2 === 0) {
+                paper.style.animation = `floatPaper 6s infinite ease-in-out`;
+            } else {
+                paper.style.animation = `floatPaperReverse 6s infinite ease-in-out`;
+            }
+            paper.style.left = `${Math.random() *  100}vw`;
+            paper.style.top = `${Math.random() * 100}vh`;
+        });
+    </script>
+</body>
+</html>
